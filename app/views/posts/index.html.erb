@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Posts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Video</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.title %></td>
+        <td>
+        <p>
+          <%= link_to post.video_url.to_s do %>
+              <%= image_tag(post.video_url(:screenshot).to_s, id: "video", :alt => "screenshot") %>
+          <% end %>
+        </p>
+        </td>
+        <td><%= link_to post.title, post %></td>
+        <td><%= link_to image_tag("/assets/delete.svg"), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'いいね!', like_path(post.id), method: :post %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<div class="new">
+  <%= link_to image_tag("/assets/new.png"), new_post_path %>
+</div>

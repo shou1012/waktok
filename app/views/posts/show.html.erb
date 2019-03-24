@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
+
+<p>
+  <strong>Video:</strong>
+</p>
+<p>
+  <%= link_to @post.video_url.to_s do %>
+      <%= image_tag(@post.video_url(:screenshot).to_s, id: "video", :alt => "screenshot") %>
+  <% end %>
+  <%= @likes_count %>
+</p>

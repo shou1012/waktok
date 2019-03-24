@@ -47,9 +47,16 @@ body{
     font-size: 13px;
     line-height: 18px;
     margin: 33px;
+    position: fixed;
+    top: 80vh;
+    right: 5vw;
 }
 
-td p{
+tr td a img{
+  width: 10vw;
+}
+
+td p img{
   display: block;
 }
 
@@ -60,9 +67,35 @@ td p{
   height: 10vh;
   border-radius: 10pc;
   border: #F40149 4px solid;
+  padding-top: 30px;
 }
 
 form{
       text-align: center;
       padding-top: 10vh;
+}
+
+.titles img{
+  width: 6vw;
+  display: inline;
+  padding-left: 5vw;
+}
+
+.titles a {
+  color: #000;
+  font-size: 5vw;
+  text-decoration: none;
+  margin: 2em 0 3em 0;
+}
+
+.titles{
+    padding-left: 30vw;
+    background-color: #E6E6E6;
+    height: 5vh;
+    padding-top: 5em;
+}
+
+a{
+  color: #fff;
+  font-size: 10vw;
 }

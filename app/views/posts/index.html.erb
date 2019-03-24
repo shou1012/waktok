@@ -13,19 +13,18 @@
 
   <tbody>
     <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td>
+
+    <%= post.title %>
         <p>
           <%= link_to post.video_url.to_s do %>
               <%= image_tag(post.video_url(:screenshot).to_s, id: "video", :alt => "screenshot") %>
           <% end %>
         </p>
-        </td>
-        <td><%= link_to post.title, post %></td>
-        <td><%= link_to image_tag("/assets/delete.svg"), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'いいね!', like_path(post.id), method: :post %></td>
-      </tr>
+        <div class="titles">
+          <%= link_to post.title, post %>
+        <%# <%= link_to image_tag("/assets/delete.svg"), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%# <%= link_to image_tag("/assets/heart.svg"), like_path(post.id), method: :post %>
+        </div>
     <% end %>
   </tbody>
 </table>
